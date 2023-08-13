@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Home Page</title>
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz@10..48&display=swap" rel="stylesheet">
+ <link href="https://fonts.google.com/specimen/Rock+Salt" rel="stylesheet">
+
+ <style>
+  @import url('https://fonts.googleapis.com/css?family=Raleway:400,700');
+
+  body {
+   margin: 0;
+   padding: 0;
+   overflow: hidden;
+   font-family: Rock salt;
+  }
+
+  .container {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+
+  }
+
+  .navbar {
+   font-family: cursive;
+   display: flex;
+   justify-content: center;
+   background-color: #ffffff;
+   padding: 10px 0;
+  }
+
+  .navbar a {
+   color: rgb(0, 0, 0);
+   text-decoration: none;
+   padding: 10px 20px;
+  }
+
+  .navbar a:hover {
+   background-color: #b0b0b0;
+  }
+ 
+ </style>
+</head>
+
+<body>
+<div class="navbar">
+  <a href="{% url 'aboutPage' %}">About Us</a>
+  <a href="{% url 'formPage' %}">Find</a>
+  <a href="{% url 'emergencyPage' %}" style="color: red;">Emergency</a>
+  <a href="{% url 'hospitalsPage' %}">Hospitals</a>
+</div>
+ <div class="container">
+  <div class="background_1">
+    {% load static %}
+   <img src="{% static 'homebg.png' %}" alt="" style="
+     
+    width: 1610px;
+    height: auto;
+    overflow: hidden;
+    margin-top: 100px;
+    margin-right: 37px;
+    margin-bottom: 29.5px;
+    margin-left: 108px;
+
+">
+
+  </div>
+
+ </div>
+</body>
+
+</html>

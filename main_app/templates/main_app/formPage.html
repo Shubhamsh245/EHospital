@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Find</title>
+ <link rel="icon" href="photos\login.png" type="image/x-icon">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz@10..48&display=swap" rel="stylesheet">
+ <link href="https://fonts.google.com/specimen/Rock+Salt" rel="stylesheet">
+
+ <style>
+  @import url('https://fonts.googleapis.com/css?family=Raleway:400,700');
+
+  body {
+   margin: 0;
+   padding: 0;
+   overflow: hidden;
+
+  }
+
+  .container {
+   margin-top: 15vh;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+
+  }
+
+  .navbar {
+   font-family: cursive;
+   display: flex;
+   justify-content: center;
+   background-color: #ffffff;
+   padding: 10px 0;
+  }
+
+  .navbar a {
+   color: rgb(0, 0, 0);
+   text-decoration: none;
+   padding: 10px 20px;
+  }
+
+  .navbar a:hover {
+   background-color: #b0b0b0;
+  }
+
+  body {
+   font-family: Arial, sans-serif;
+  }
+
+  form {
+   width: 60%;
+   margin: auto;
+   padding: 20px;
+   border: 1px solid #ccc;
+   border-radius: 10px;
+   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  label {
+   font-weight: bold;
+  }
+
+  input[type="text"],
+  input[type="password"] {
+   width: 100%;
+   padding: 10px;
+   margin-bottom: 10px;
+   border: 1px solid #ccc;
+   border-radius: 5px;
+  }
+
+  input[type="checkbox"] {
+   margin-right: 5px;
+  }
+
+  input[type="submit"] {
+   display: inline-block;
+   padding: 10px 20px;
+   font-size: 16px;
+   font-weight: bold;
+   text-align: center;
+   text-decoration: none;
+   border: none;
+   border-radius: 5px;
+   background-color: #3498db;
+   color: #ffffff;
+   cursor: pointer;
+   transition: background-color 0.3s ease;
+  }
+
+  img {
+   float: right;
+   width: 36%;
+   margin-top: 20px;
+   border-radius: 10px;
+   box-shadow: inset -18px 1px 17px 15px rgba(0, 0, 0, 0.1);
+  }
+ </style>
+ <title>Text Fields, Checkboxes, and Image</title>
+</head>
+
+<body>
+ <div class="navbar">
+  <a href="{% url 'aboutPage' %}">About Us</a>
+  <a href="{% url 'formPage' %}">Find</a>
+  <a href="{% url 'emergencyPage' %}" style="color: red;">Emergency</a>
+  <a href="{% url 'hospitalsPage' %}">Hospitals</a>
+ </div>
+ <div class="container">
+
+  <form method="POST">
+   {% csrf_token %}
+   <label for="cord1">Latitude</label>
+   <input type="text" id="name" name="cord1" placeholder="Enter Your Latitude"><br><br>
+
+   <label for="cord2">Longitude</label>
+   <input type="text" id="password" name="cord2" placeholder="Enter Your Longitude"><br><br>
+
+   <input type="submit" value="Find">
+  </form>
+
+ </div>
+</body>
+
+</html>

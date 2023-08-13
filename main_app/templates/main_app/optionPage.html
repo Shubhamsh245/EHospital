@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>hospitals</title>
+ <style>
+  @import url('https://fonts.googleapis.com/css?family=Raleway:400,700');
+
+  body {
+   margin: 0;
+   padding: 0;
+
+  }
+
+  .container {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+
+  }
+
+  .navbar {
+   font-family: cursive;
+   display: flex;
+   justify-content: center;
+   background-color: #ffffff;
+   padding: 10px 0;
+  }
+
+  .navbar a {
+   color: rgb(0, 0, 0);
+   text-decoration: none;
+   padding: 10px 20px;
+  }
+
+  .navbar a:hover {
+   background-color: #b0b0b0;
+  }
+
+  body {
+   font-family: Arial, sans-serif;
+  }
+
+  .profile {
+   max-width: 600px;
+   margin: 20px auto;
+   padding: 20px;
+   border: 1px solid #ccc;
+   border-radius: 10px;
+   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .profile h2 {
+   margin-top: 0;
+  }
+ </style>
+ <title>User Profile</title>
+</head>
+
+<body>
+ <div class="navbar">
+  <a href="{% url 'aboutPage' %}">About Us</a>
+  <a href="{% url 'formPage' %}">Find</a>
+  <a href="{% url 'emergencyPage' %}" style="color: red;">Emergency</a>
+  <a href="{% url 'hospitalsPage' %}">Hospitals</a>
+ </div>
+ {% for hos,i in data %}
+ <div class="profile">
+  <h2>{{hos.name}}</h2>
+  <p><strong>Free Beds:</strong>{{hos.free_beds}}</p>
+  <p><strong>Distance:</strong> {{i}} km</p>
+ </div>
+ {% endfor %}
+</body>
+
+</html>
